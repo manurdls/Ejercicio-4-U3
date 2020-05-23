@@ -10,14 +10,14 @@ from manejadorEmpleados import manejadorEmpleados
 from claseMenu import Menu
 
 def testEmpleados():
-    empleadoDePlanta = DePlanta('38409657', 'Manuel Rossi', 'San Juan 785 - Jachal', '2644578712', 55000, 10)
+    empleadoDePlanta = DePlanta('123', 'Pepe Flores', 'Juan Jufre 838', '011222333', 55000, 10)
     print(empleadoDePlanta)
     print('')
-    empleadoContratado = Contratado('38409657', 'Manuel Rossi', 'San Juan 785 - Jachal', '2644578712',
+    empleadoContratado = Contratado('456', 'Juan Gomez', 'Rivadavia 123', '011444555',
                                     date.today(), date.today() + datetime.timedelta(days=90), 20)
     print(empleadoContratado)
     print('')
-    empleadoExterno = Externo('38409657', 'Manuel Rossi', 'San Juan 785 - Jachal', '264578712',
+    empleadoExterno = Externo('789', 'Elian Rodriguez', 'Rawson 251', '011668777',
                               date.today(), date.today() + datetime.timedelta(days=90), 'Carpinteria', 700, 15000, 2000)
     print(empleadoExterno)
 if __name__ == '__main__':
