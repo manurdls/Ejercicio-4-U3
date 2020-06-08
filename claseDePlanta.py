@@ -11,8 +11,10 @@ class DePlanta(Empleado):
 
     def __str__(self):
         s = Empleado.__str__(self)
-        return s + '\nSueldo basico: {}\nAntiguedad: {}\nSueldo: {}'\
-            .format(self.__sueldoBasico, self.__antiguedad, Empleado.sueldo(self))
+        s += 'Sueldo basico: {}\nAntiguedad: {}\nSueldo: {}\n'.format(self.__sueldoBasico,
+                                                                      self.__antiguedad,
+                                                                      Empleado.sueldo(self))
+        return s
 
     def getSueldoBasico(self):
         return self.__sueldoBasico
