@@ -11,8 +11,10 @@ class Empleado(object):
         self.__telefono = telefono
 
     def __str__(self):
-        return 'DNI: {}\nNombre: {}\nDireccion: {}\nTelefono: {}'\
-        .format(self.__dni, self.__nombre, self.__direccion, self.__telefono)
+        return 'DNI: {}\nNombre: {}\nDireccion: {}\nTelefono: {}\n'.format(self.__dni,
+                                                                           self.__nombre,
+                                                                           self.__direccion,
+                                                                           self.__telefono)
 
     def getDni(self):
         return self.__dni
@@ -26,3 +28,5 @@ class Empleado(object):
         pass
     def sueldo(self):
         return self.getSueldo()
+    def sumarHoras(self, horas):
+        pass
