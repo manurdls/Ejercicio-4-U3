@@ -1,7 +1,7 @@
-import os
+from limpiarPantalla import limpiarPantalla
 import datetime
 from datetime import date
-from datetime import datetime
+#from datetime import datetime
 from claseEmpleado import Empleado
 from claseDePlanta import DePlanta
 from claseContratado import Contratado
@@ -10,14 +10,14 @@ from manejadorEmpleados import manejadorEmpleados
 from claseMenu import Menu
 
 def testEmpleados():
-    empleadoDePlanta = DePlanta('123', 'Pepe Flores', 'Juan Jufre 838', '011222333', 55000, 10)
+    empleadoDePlanta = DePlanta('38409657', 'Manuel Rossi', 'San Juan 785 - Jachal', '2644578712', 55000, 10)
     print(empleadoDePlanta)
     print('')
-    empleadoContratado = Contratado('456', 'Juan Gomez', 'Rivadavia 123', '011444555',
+    empleadoContratado = Contratado('38409657', 'Manuel Rossi', 'San Juan 785 - Jachal', '2644578712',
                                     date.today(), date.today() + datetime.timedelta(days=90), 20)
     print(empleadoContratado)
     print('')
-    empleadoExterno = Externo('789', 'Elian Rodriguez', 'Rawson 251', '011668777',
+    empleadoExterno = Externo('38409657', 'Manuel Rossi', 'San Juan 785 - Jachal', '264578712',
                               date.today(), date.today() + datetime.timedelta(days=90), 'Carpinteria', 700, 15000, 2000)
     print(empleadoExterno)
 if __name__ == '__main__':
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     dim = -1
     while dim < 1:
         dim = int(input('Ingrese la dimension del arreglo: '))
-        os.system('cls')
+        limpiarPantalla()
         if dim < 1:
             print('Error: la dimension debe ser mayor a cero.')
     empleados = manejadorEmpleados(dim)
@@ -40,6 +40,6 @@ if __name__ == '__main__':
     while not salir:
         print('\n---------MENU---------\n0. Salir\n1. Registrar horas\n2. Total de tarea\n3. Ayuda\n4. Calcular sueldo')
         op = int(input('Ingrese una opcion: '))
-        os.system('cls')
+        limpiarPantalla()
         menu.opcion(op, empleados)
         salir = op==0
