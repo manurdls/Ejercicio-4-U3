@@ -1,23 +1,19 @@
-import datetime
-
 from claseEmpleado import Empleado
+from claseTemporal import Temporal
 
-class Contratado(Empleado):
+class Contratado(Temporal):
     valorPorHora = 100
-    __fechaInicio : datetime.date
-    __fechaFin : datetime.date
     __cantidadHorasTrabajadas = 0
 
     def __init__(self, dni, nombre, direccion, telefono, fechaInicio, fechaFin, cantHoras):
-        Empleado.__init__(self, dni, nombre, direccion, telefono)
-        self.__fechaInicio = fechaInicio
-        self.__fechaFin = fechaFin
+        Temporal.__init__(self, dni, nombre, direccion, telefono, fechaInicio, fechaFin)
         self.__cantidadHorasTrabajadas = cantHoras
 
     def __str__(self):
-        s = Empleado.__str__(self)
-        return s + '\nFecha de inicio: {}\nFecha de finalizacion: {}\nCantidad de horas Trabajadas: {}\nSueldo: {}'\
-            .format(self.__fechaInicio, self.__fechaFin, self.__cantidadHorasTrabajadas,Empleado.sueldo(self))
+        s = Empleado.__str__(self) +  Temporal.__str__(self)
+        s += 'Cantidad de horas Trabajadas: {}\nSueldo: {}\n'.format(self.__cantidadHorasTrabajadas,
+                                                                     Empleado.sueldo(self))
+        return s
 
     @classmethod
     def modificarValorPorHora(cls, valor):
@@ -29,10 +25,6 @@ class Contratado(Empleado):
     @classmethod
     def getValorPorHora(cls):
         return cls.valorPorHora
-    def getFechaInicio(self):
-        return self.__fechaInicio
-    def getFechaFin(self):
-        return self.__fechaFin
     def getCantidadHorasTrabajadas(self):
         return self.__cantidadHorasTrabajadas
     def getSueldo(self):
